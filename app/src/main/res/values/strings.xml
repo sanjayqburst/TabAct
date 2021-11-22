@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TabAct</string>
+    <string name="tab_1">News</string>
+    <string name="tab_2">Favourites</string>
+    <string name="tab_3">Settings</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="newsapptitle">News app</string>
+</resources>
