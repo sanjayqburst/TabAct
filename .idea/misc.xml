@@ -3,11 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/layout-v23/fragment_favourites.xml" value="0.16927083333333334" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="app/src/main/res/layout/fragment_favourites.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_favourites.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_news.xml" value="0.2211690363349131" />
-        <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/gridview_support.xml" value="0.25" />
         <entry key="app/src/main/res/layout/listview_support_textview.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/recycler_card_view.xml" value="0.16927083333333334" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.18541666666666667" />
       </map>
     </option>
   </component>

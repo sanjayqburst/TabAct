@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import com.example.tabact.MainActivity
 import com.example.tabact.R
 import com.example.tabact.databinding.FragmentNewsBinding
 
@@ -15,7 +14,7 @@ class NewsFragment : Fragment() {
     private lateinit var binding:FragmentNewsBinding
     private lateinit var arrayAdapter: ArrayAdapter<*>
 
-    val list = arrayOf(
+    private val list = arrayOf(
         "Cristiano Ronaldo",
         "Messi",
         "Neymar",
@@ -30,18 +29,36 @@ class NewsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding= FragmentNewsBinding.inflate(layoutInflater)
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_news, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        arrayAdapter = ArrayAdapter(
-            requireContext(),
-            android.R.layout.simple_list_item_1, list
-        )
-        binding.listViewId.adapter=arrayAdapter
+        var num=0
+        binding.swipeRefresh.setOnRefreshListener {
+            if (num<=8){
+                num++
+                val newArray=list.copyOfRange(0,num)
+                arrayAdapter = ArrayAdapter(
+                    requireContext(),
+                    R.layout.listview_support_textview, newArray
+                )
+                binding.listViewId.adapter=arrayAdapter
+                binding.swipeRefresh.isRefreshing = false
+            }else{
+                num=0
+                arrayAdapter = ArrayAdapter(
+                    requireContext(),
+                    R.layout.listview_support_textview, list
+                )
+                binding.listViewId.adapter=arrayAdapter
+                num++
+                binding.swipeRefresh.isRefreshing = false
+            }
+        }
+
     }
 }

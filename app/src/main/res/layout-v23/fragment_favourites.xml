@@ -15,7 +15,6 @@
         android:id="@+id/gridView"
         android:numColumns="2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:targetApi="m" />
+        android:layout_height="wrap_content"/>
 
 </FrameLayout>
